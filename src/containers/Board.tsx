@@ -1,19 +1,56 @@
+import createConfetti from "canvas-confetti"
+import { when } from "mobx"
 import { useObserver } from "mobx-react-lite"
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { Column } from "../components/Column"
 import { Disc } from "../components/Disc"
 import { Slot } from "../components/Slot"
+import { randomBetween } from "../helpers/randomBetween"
+import { wait } from "../helpers/wait"
 import { ColumnModel } from "../models/ColumnModel"
 import { SlotModel } from "../models/SlotModel"
 import { gameStore } from "../stores/gameStore"
 import { breakpoints, colors } from "../styling/constants"
+import { Team } from "../types"
 
 const generateDiscKey = (slot: SlotModel) => `disc-${slot.x}-${slot.y}`
 const generateSlotKey = (slot: SlotModel) => `slot-${slot.x}-${slot.y}`
 const generateColumnKey = (column: ColumnModel) => `column-${column.x}`
 
+const confettiConfig = (winner: Team) => ({
+  particleCount: 200,
+  angle: randomBetween(55, 125),
+  spread: 100,
+  origin: {
+    y: 0.6
+  },
+  colors: [colors[winner!], colors.disc]
+})
+
+const useVictoryConfetti = () => {
+  useEffect(() => {
+    const disposer = when(
+      () => gameStore.winner !== undefined,
+      async () => {
+        const { winner } = gameStore
+
+        for (var i = 0; i < 3; i++) {
+          createConfetti(confettiConfig(winner!))
+          await wait(500)
+        }
+      }
+    )
+
+    return disposer
+  }, [])
+}
+
 export const Board = () => {
+  useVictoryConfetti()
+
+  const isReady = useObserver(() => gameStore.state === "ready")
+
   const discs = useObserver(() =>
     gameStore.filledSlots.map(slot => (
       <Disc
@@ -34,6 +71,7 @@ export const Board = () => {
       key={generateColumnKey(column)}
       x={column.x}
       onClick={() => gameStore.fillColumn(column)}
+      isReady={isReady}
     />
   ))
 

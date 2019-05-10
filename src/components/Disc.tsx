@@ -1,8 +1,8 @@
 import classNames from "classnames"
-import { rgba } from "polished"
 import React from "react"
 import { animated, config, useSpring } from "react-spring"
 import styled from "styled-components"
+import { colors } from "../styling/constants"
 import { Team } from "../types"
 
 interface DiscProps {
@@ -44,18 +44,18 @@ const Container = styled(animated.div)<Pick<DiscProps, "x" | "y">>`
 
   background: radial-gradient(
     circle,
-    ${rgba("black", 0.3)},
-    ${rgba("black", 0.3)} 40%,
+    ${colors.disc},
+    ${colors.disc} 40%,
     var(--border-color) calc(40% + 1px),
     var(--border-color) 48%,
-    ${rgba("black", 0.3)} calc(48% + 1px)
+    ${colors.disc} calc(48% + 1px)
   );
 
   &.teamAi {
-    --border-color: #c91a55;
+    --border-color: ${colors.ai};
   }
 
   &.teamPlayer {
-    --border-color: #268fc0;
+    --border-color: ${colors.player};
   }
 `

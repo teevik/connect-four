@@ -1476,6 +1476,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/canvas-confetti@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@types/canvas-confetti/-/canvas-confetti-0.1.0.tgz#5adea661e03322498c32eb4f6a3e8e677e36dd11"
+  integrity sha512-LsnlT52tlm9IHHiYzzG3ti0LrxqyzMSzrFPHFHjDcsdhUfpTfL/76D2Wza7JcAnV9Z1wReyzdOmR8fMNWyO3vA==
+
 "@types/classnames@^2.2.7":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.7.tgz#fb68cc9be8487e6ea5b13700e759bfbab7e0fefd"
@@ -2696,6 +2701,11 @@ caniuse-lite@^1.0.30000955:
   version "1.0.30000955"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000955.tgz#360fdb9a1e41d6dd996130411334e44a39e4446d"
   integrity sha512-6AwmIKgqCYfDWWadRkAuZSHMQP4Mmy96xAXEdRBlN/luQhlRYOKgwOlZ9plpCOsVbBuqbTmGqDK3JUM/nlr8CA==
+
+canvas-confetti@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/canvas-confetti/-/canvas-confetti-0.2.1.tgz#6fc36082a9a2a710354045830aae98e1d7003b5c"
+  integrity sha512-Pnz7MEKlgNSpmpLYPjFC5DCFekQZl7RZpbBT/3psa5aINjlnYwiixCMzrxFgudRV5OVqaeQrIoGbrNVHk0lDEA==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -10114,10 +10124,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.4.5:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
-  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
+typescript@^3.5.0-dev.20190509:
+  version "3.5.0-dev.20190509"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.0-dev.20190509.tgz#28ae52fe31c6d3bd7b95d974c96ae0fe84fc54d6"
+  integrity sha512-jbpXSKOn7BOgAo3/B+4Y5SXf8xTQyqnOeZWZJC2oEhvOJmStwQCRmurzivoZt7yx1oMG7ilhOjFgKtkOaJ1Q4g==
 
 uglify-js@3.4.x, uglify-js@^3.1.4:
   version "3.4.9"

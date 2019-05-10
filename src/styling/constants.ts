@@ -1,6 +1,9 @@
 export const colors = {
   background: "#212c2d",
-  board: "#334446"
+  board: "#334446",
+  disc: "#141d1f",
+  ai: "#c91a55",
+  player: "#268fc0"
 }
 
 export const breakpoints = {

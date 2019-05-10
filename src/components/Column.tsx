@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import { rgba } from "polished"
 import React from "react"
 import styled from "styled-components"
@@ -5,12 +6,15 @@ import styled from "styled-components"
 interface ColumnProps {
   x: number
   onClick: () => void
+  isReady: boolean
 }
 
 export const Column = (props: ColumnProps) => {
-  const { x, onClick } = props
+  const { x, onClick, isReady } = props
 
-  return <Container x={x} onClick={onClick} />
+  const className = classNames({ isReady })
+
+  return <Container className={className} x={x} onClick={onClick} />
 }
 
 const Container = styled.button<Pick<ColumnProps, "x">>`
@@ -23,7 +27,9 @@ const Container = styled.button<Pick<ColumnProps, "x">>`
   cursor: pointer;
   z-index: 2;
 
-  &:hover,
+  transition: background-color 0.1s ease;
+
+  &.isReady:hover,
   &.focus-visible {
     background-color: ${rgba("white", 0.05)};
   }
