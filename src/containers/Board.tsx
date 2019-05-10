@@ -57,7 +57,7 @@ export const Board = () => {
         key={generateDiscKey(slot)}
         x={slot.x}
         y={slot.y}
-        team={slot.filledBy}
+        filledBy={slot.filledBy}
       />
     ))
   )

@@ -8,11 +8,11 @@ import { Team } from "../types"
 interface DiscProps {
   x: number
   y: number
-  team: Team
+  filledBy: Team
 }
 
 export const Disc = (props: DiscProps) => {
-  const { x, y, team } = props
+  const { x, y, filledBy } = props
 
   const style = useSpring({
     to: { transform: "translateY(0)" },
@@ -24,8 +24,8 @@ export const Disc = (props: DiscProps) => {
   })
 
   const className = classNames({
-    teamAi: team === "ai",
-    teamPlayer: team === "player"
+    isFilledByAi: filledBy === "ai",
+    isFilledByPlayer: filledBy === "player"
   })
 
   return <Container x={x} y={y} className={className} style={style} />
@@ -51,11 +51,11 @@ const Container = styled(animated.div)<Pick<DiscProps, "x" | "y">>`
     ${colors.disc} calc(48% + 1px)
   );
 
-  &.teamAi {
+  &.isFilledByAi {
     --border-color: ${colors.ai};
   }
 
-  &.teamPlayer {
+  &.isFilledByPlayer {
     --border-color: ${colors.player};
   }
 `
