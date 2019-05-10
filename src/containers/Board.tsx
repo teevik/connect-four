@@ -1,5 +1,5 @@
 import createConfetti from "canvas-confetti"
-import { autorun, when } from "mobx"
+import { autorun } from "mobx"
 import { useObserver } from "mobx-react-lite"
 import React, { useEffect } from "react"
 import styled from "styled-components"
