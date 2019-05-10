@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/connect-four/static/js/main.8d60debb.chunk.js",
-    "main.js.map": "/connect-four/static/js/main.8d60debb.chunk.js.map",
+    "main.js": "/connect-four/static/js/main.c2bffcfd.chunk.js",
+    "main.js.map": "/connect-four/static/js/main.c2bffcfd.chunk.js.map",
     "runtime~main.js": "/connect-four/static/js/runtime~main.000e00dd.js",
     "runtime~main.js.map": "/connect-four/static/js/runtime~main.000e00dd.js.map",
-    "static/js/2.f5243536.chunk.js": "/connect-four/static/js/2.f5243536.chunk.js",
-    "static/js/2.f5243536.chunk.js.map": "/connect-four/static/js/2.f5243536.chunk.js.map",
+    "static/js/2.88298fab.chunk.js": "/connect-four/static/js/2.88298fab.chunk.js",
+    "static/js/2.88298fab.chunk.js.map": "/connect-four/static/js/2.88298fab.chunk.js.map",
     "index.html": "/connect-four/index.html",
-    "precache-manifest.28f674003a7f57447376855e64ab0971.js": "/connect-four/precache-manifest.28f674003a7f57447376855e64ab0971.js",
+    "precache-manifest.e2277c51749d7739e609b5a46df93db6.js": "/connect-four/precache-manifest.e2277c51749d7739e609b5a46df93db6.js",
     "service-worker.js": "/connect-four/service-worker.js"
   }
 }
