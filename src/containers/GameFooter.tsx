@@ -12,7 +12,7 @@ const stateTexts: Record<GameState, string> = {
   "player won": "You won!"
 }
 
-export const GameInfo = () => {
+export const GameFooter = () => {
   const state = useObserver(() => gameStore.state)
   const stateText = stateTexts[state]
 
@@ -20,9 +20,9 @@ export const GameInfo = () => {
 }
 
 const Container = styled.footer`
-  color: ${rgba("white", 0.7)};
+  margin-top: 10px;
   font-size: 24px;
   font-weight: 500;
   text-align: center;
-  margin-top: 10px;
+  color: ${rgba("white", 0.7)};
 `

@@ -1,5 +1,5 @@
 import createConfetti from "canvas-confetti"
-import { when } from "mobx"
+import { autorun, when } from "mobx"
 import { useObserver } from "mobx-react-lite"
 import React, { useEffect } from "react"
 import styled from "styled-components"
@@ -28,19 +28,19 @@ const confettiConfig = (winner: Team) => ({
   colors: [colors[winner!], colors.disc]
 })
 
+const createManyConfetti = async (winner: Team) => {
+  for (var i = 0; i < 3; i++) {
+    createConfetti(confettiConfig(winner!))
+    await wait(500)
+  }
+}
+
 const useVictoryConfetti = () => {
   useEffect(() => {
-    const disposer = when(
-      () => gameStore.winner !== undefined,
-      async () => {
-        const { winner } = gameStore
-
-        for (var i = 0; i < 3; i++) {
-          createConfetti(confettiConfig(winner!))
-          await wait(500)
-        }
-      }
-    )
+    const disposer = autorun(() => {
+      const { winner } = gameStore
+      if (winner) createManyConfetti(winner)
+    })
 
     return disposer
   }, [])

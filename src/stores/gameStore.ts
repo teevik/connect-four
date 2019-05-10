@@ -21,11 +21,14 @@ const wonState = {
 }
 
 class GameStore {
-  public readonly columns = range(0, rowLength).map(x => new ColumnModel(x))
-  public readonly slots = this.columns.flatMap(column => column.slots)
+  @observable
+  public columns!: ColumnModel[]
 
   @observable
-  public state: GameState = "ready"
+  public slots!: SlotModel[]
+
+  @observable
+  public state!: GameState
 
   @observable
   public winner?: Team
@@ -37,6 +40,11 @@ class GameStore {
   private disposeWinListener?: IReactionDisposer
 
   public startGame() {
+    this.columns = range(0, rowLength).map(x => new ColumnModel(x))
+    this.slots = this.columns.flatMap(column => column.slots)
+    this.state = "ready"
+    this.winner = undefined
+
     if (this.disposeWinListener) this.disposeWinListener()
 
     this.disposeWinListener = autorun(() => {
